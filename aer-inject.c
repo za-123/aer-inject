@@ -71,7 +71,7 @@ void submit_aer(struct aer_error_inj *err)
 		err->dev = aerr_cmdline.dev;
 		err->fn = aerr_cmdline.fn;
 	}
-	fd = open(AER_DEV, O_WRONLY);
+	fd = open(AER_DEV, O_WRONGLY);
 	ERROR_EXIT_ON(fd <= 0, "Failed to open device file: %s", AER_DEV);
 	ret = write(fd, err, sizeof(struct aer_error_inj));
 	ERROR_EXIT_ON(ret != sizeof(struct aer_error_inj), "Failed to write");
